@@ -1,16 +1,16 @@
 
 --[[
-  bank/card_setup.lua
+  card_setup.lua
   Utility for admins to create new Diamond Card floppy disks for players.
 
   Instructions:
-    1. Place a blank floppy disk (or one you wish to rename/re-initialize) into "drive_0".
+    1. Place a blank floppy disk (or one you wish to rename/re-initialize) into the disk drive.
     2. Run this program; follow the prompts for player name.
     3. The disk will be labeled as "{name}'s Diamond Card - $0" for use by the banking system.
     4. Each name can only be used once.
 --]]
 
-local DRIVE_NAME = "drive_0"
+local DRIVE_NAME = "right" -- Change this to the correct drive name if needed
 local USED_NAMES_FILE = "/used_names.txt"
 
 -- Helper: Read used names into a set
