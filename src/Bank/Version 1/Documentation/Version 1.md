@@ -12,6 +12,6 @@ Item List:
 - 2 Wired Modems
 
 Setup:
-![[2025-04-24_10.37.09.png]]
+<img src="img/2025-04-24_10.37.16.png" alt="Front of bank setup">
 
-![[2025-04-24_10.37.16.png]]
+<img src="img/2025-04-24_10.37.09.png" alt="Back of bank setup">
