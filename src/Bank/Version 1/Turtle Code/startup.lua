@@ -1,7 +1,7 @@
 
 -- Turtle Bank Worker with Vault and Fuel Support and requestId echo
 
-local MODEM_SIDE = "right"
+local MODEM_SIDE = "right" -- Change to the side where the modem is attached (left/right) as to not interfere with the turtle's movement
 local DIAMOND_ITEM = "minecraft:diamond"
 local FUEL_THRESHOLD = 50
 
@@ -45,7 +45,8 @@ local function turnAround() turtle.turnRight() turtle.turnRight() end
 local function faceChest()
     for i = 1, 4 do
         local ok, typ = pcall(peripheral.getType, "front")
-        if ok and typ and typ:find("chest") then return i - 1 end
+        if ok and typ and typ:find("chest") then return i - 1 end -- If you want to use a barrel instead, change "chest" to "minecraft:barrel"
+        end
         turtle.turnRight()
     end
     error("No chest in any direction adjacent to the turtle!")
@@ -130,13 +131,6 @@ end
 
 while true do
     local senderID, msg, protocol = rednet.receive()
-    -- Debug print: show all received messages and who sent them
-    print("Rednet received from computer ID", senderID, "Protocol:", tostring(protocol))
-    if type(msg) == "table" then
-        print("Message contents:", textutils.serialize(msg))
-    else
-        print("Raw message: ", tostring(msg))
-    end
     if type(msg) == "table" then
         if msg.hello == "bankTurtle" then
             rednet.send(senderID, {hello="bankTurtle"}, protocol)
