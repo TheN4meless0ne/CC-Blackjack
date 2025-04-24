@@ -1,4 +1,5 @@
 Instructions for installation of the first version of the Bank program
+<br>
 Install the files onto the turtle and computer and edit the required values, see comments in startup files.
 
 Item List:
